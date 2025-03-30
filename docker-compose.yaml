@@ -1,7 +1,10 @@
 services:
-  app:
-    build: .
+  dev:
+    build: 
+      context: ./app
+      dockerfile: ../dev.Dockerfile
     volumes:
+      - /var/www/html/vendor
       - ./app:/var/www/html
     ports:
       - 9000:80
