@@ -17,6 +17,8 @@ COPY composer.* ./
 # Instala as dependências do projeto
 RUN composer install --ignore-platform-req=ext-intl
 
+RUN mkdir -p tmp && chown -R www-data:www-data tmp
+
 # Copia a configuração do Apache
 COPY httpd.conf /etc/apache2/apache2.conf
 
