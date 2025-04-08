@@ -4,8 +4,8 @@ services:
       context: ./app
       dockerfile: ../dev.Dockerfile
     volumes:
-      - /var/www/html/vendor
       - ./app:/var/www/html
+      - vendor:/var/www/html/vendor
     ports:
       - 9000:80
   mysql:
@@ -24,3 +24,4 @@ services:
     command: --default-authentication-plugin=mysql_native_password
 volumes:
   mysql_data:
+  vendor:
